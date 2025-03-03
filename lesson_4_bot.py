@@ -71,6 +71,10 @@ dp = Dispatcher()
 async def start_func(message: types.Message):
     await message.answer('Вы ввели команду /start')
 
+@dp.message(Command("help"))
+async def start_func(message: types.Message):
+    await message.answer('Вы ввели команду /help')
+    
 async def main():
     await dp.start_polling(bot)
 
